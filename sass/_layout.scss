@@ -33,8 +33,28 @@
 }
 
 .hotel-view {
-    // background-color: #fff;
-    background-color: skyblue;  // for tests
-    height: 70rem;  // for test too
+    background-color: #fff;
     flex: 1; // Grow as much as it can
+}
+
+.detail {
+    display: flex;
+    padding: 4rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--border-line);
+}
+
+.description {
+    // Don't grow, don't shrink too and 60% of the parent width
+    flex: 0 0 60%;
+    padding: 3rem;
+    margin-right: 4rem;
+    font-size: 1.4rem;
+    box-shadow: 0 2rem 5rem rgba(black, 0.2);
+}
+
+.user-reviews {
+    // Occupy the remaining space
+    flex: 1;
+    background-color: azure;
 }
