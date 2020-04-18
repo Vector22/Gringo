@@ -500,3 +500,81 @@
 
     }
 }
+
+
+///////////////////////////////
+// CTA
+
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+}
+
+
+///////////////////////////////
+// BUTTON
+
+.btn {
+
+    font-size: 1.4rem;
+    border: none;
+    font-weight: 300;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 100px;  // Elispsis border
+
+    background-image: linear-gradient(to right,
+        var(--color-primary-light),
+        var(--color-primary-dark)
+    );
+    color: white;
+
+    position: relative;  // The invisible button need it
+    overflow: hidden;  // To hidde the invisible text overflowing
+
+    &__visible {
+        display: inline-block;
+        padding: 2rem 7.5rem;
+        transition: all .3s;
+
+    }
+
+    &__invisible {
+        display: inline-block;
+        padding: 2rem 0; // Try to put 7.5rem instead of zero to see...
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -100%;  // Just on top of the parrent element
+
+        transition: all .3s;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left,
+        var(--color-primary-light),
+        var(--color-primary-dark)
+    );
+    }
+
+    &:hover  &__visible {
+       transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulstate 1s infinite;
+    }
+}
