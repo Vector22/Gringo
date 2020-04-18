@@ -40,6 +40,7 @@
 .detail {
     display: flex;
     padding: 4rem;
+    font-size: 1.4rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--border-line);
 }
@@ -49,12 +50,16 @@
     flex: 0 0 60%;
     padding: 3rem;
     margin-right: 4rem;
-    font-size: 1.4rem;
     box-shadow: 0 2rem 5rem rgba(black, 0.2);
 }
 
 .user-reviews {
     // Occupy the remaining space
     flex: 1;
-    background-color: azure;
+
+    // Center the button bellow
+    display: flex;
+    flex-direction: column;
+    // Decrease the border bottom line
+    align-items: center;
 }
