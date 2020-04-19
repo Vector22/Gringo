@@ -15,6 +15,14 @@
     align-items: center;
     justify-content: center;
 
+    // Media query
+    @media only screen and (max-width: $bp-smallest) {
+        // Put the search bar at the end. After the icons
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -140,12 +148,28 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    // Media query
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+    }
+
     &__item {
         position: relative;
+
+        // Media query
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+        }
 
         // Some margin  between elts
         &:not(:last-child) {
             margin-bottom: .5rem;
+
+            // Media query
+            @media only screen and (max-width: $bp-medium) {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -184,6 +208,18 @@
         // Make the link always visible when the item::before animation happens
         position: relative;  // Need to be setted before using z-index
         z-index: 2;
+
+        // Media query
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        // Media query
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            padding: 1.5rem .5rem;
+        }
     }
 
     &__icon {
@@ -192,6 +228,14 @@
 
         margin-right: 2rem;
         fill: currentColor;  // The elt or it's parent color --color-grey-light-1
+
+        // Media query
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+            margin-bottom: .6rem;
+            height: 1.5rem;
+            width: 1.5rem;
+        }
     }
 }
 
@@ -203,6 +247,11 @@
     padding: 2.5rem;
     text-align: center;
     color: var(--color-grey-light-4);
+
+    // Media query
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 
@@ -235,6 +284,12 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        // Media query
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.74rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
@@ -281,17 +336,32 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        // Media query
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
     }
 
     &__rating-average {
         font-size: 2.25rem;
         font-weight: 300;
+
+        // Media query
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.75rem;
+        }
     }
 
     &__rating-count {
 
         font-size: 1rem;
         text-transform: uppercase;
+
+        // Media query
+        @media only screen and (max-width: $bp-small) {
+            font-size: .66rem;
+        }
     }
 }
 
@@ -422,8 +492,13 @@
         border: 1px solid white;
 
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
+    }
+
+    &__friends{
+        // Set the photos side by side
+        display: flex;
     }
 
     &__count {
@@ -444,6 +519,12 @@
     // Needed by ::before
     position: relative;
     overflow: hidden;
+
+    // Media query
+    @media only screen and (max-width: $bp-medium) {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
 
     &__text {
         margin-bottom: 2rem;
@@ -508,6 +589,11 @@
 .cta {
     padding: 3.5rem 0;
     text-align: center;
+
+    // Media query
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem 0;
+    }
 
     &__book-now {
         font-size: 2rem;

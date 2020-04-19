@@ -16,8 +16,7 @@ Grey dark 3: #999
 
 */
 
-// Make use of the new css custons variables instead of sass variables
-
+// Make use of the new css custons variables
 :root {
     --color-primary: #eb2f64;
     --color-primary-light: #FF3366;
@@ -37,6 +36,14 @@ Grey dark 3: #999
     --border-line: 2px solid var(--color-grey-light-2);
 }
 
+// Use of sass variables for media queries
+// Don't forget media query work fine with em not rem.
+$bp-largest: 75em;  // 1200px/16px(default browser font size)
+$bp-large: 68.65em;  // 1100px/16px
+$bp-medium: 56.25em;  // 900px/16px
+$bp-small: 37.5em;  // 600px/16px
+$bp-smallest: 31.25em;  // 500px/16px
+
 * {
     margin: 0;
     padding: 0;
@@ -51,6 +58,11 @@ Grey dark 3: #999
 html {
     box-sizing: border-box;
     font-size: 62.5%;  // 1rem = 10px (10/16 = 0.625)
+
+    // Media query
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%;  // 8px
+    }
 }
 
 body {

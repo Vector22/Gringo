@@ -5,6 +5,14 @@
     box-shadow: var(--shadow-dark);
 
     min-height: 55rem;
+
+
+    // Media query
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .header {
@@ -16,10 +24,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;  // Center  items vertically
+
+    // Media query
+    @media only screen and (max-width: $bp-smallest) {
+        // Allow the search bar to wrap on the second row. Bellow the logo
+        flex-wrap: wrap;
+        height: 12rem;
+        align-content: space-around;
+    }
+
 }
 
 .content {
     display: flex;
+
+    // Media query
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
 }
 
 .sidebar {
@@ -43,6 +65,16 @@
     font-size: 1.4rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--border-line);
+
+    // Media query
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem;
+    }
+
+    // Media query
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
 }
 
 .description {
@@ -51,6 +83,18 @@
     padding: 3rem;
     margin-right: 4rem;
     box-shadow: 0 2rem 5rem rgba(black, 0.2);
+
+    // Media query
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 2.5rem;
+    }
+
+    // Media query
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 .user-reviews {
